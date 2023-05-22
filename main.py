@@ -1,4 +1,5 @@
 import sys
+
 from buttons import Button, ButtonsGrid
 from buttons import Button, ButtonsGrid
 from display import Display
@@ -31,6 +32,7 @@ if __name__ == '__main__':
 
     # Grid
     buttonsGrid = ButtonsGrid()
+    buttonsGrid = ButtonsGrid(display)
     window.vLayout.addLayout(buttonsGrid)
 
     # Executa tudo

@@ -16,9 +16,11 @@ class Button(QPushButton):
         self.setMinimumSize(75, 75)
         self.setProperty('cssClass', 'specialButton')
         self.setFont(font)
+        self.setCheckable(True)
+
 
 class ButtonsGrid(QGridLayout):
-    def __init__(self, *args, **kwargs) -> None:
+    def __init__(self, display: Display, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 
         self._gridMask = [
@@ -28,6 +30,7 @@ class ButtonsGrid(QGridLayout):
             ['1', '2', '3', '+'],
             ['',  '0', '.', '='],
         ]
+        self.display = display
         self.makeGrid()
 
     def makeGrid(self):
